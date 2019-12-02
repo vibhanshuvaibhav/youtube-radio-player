@@ -45,7 +45,7 @@ Just go on official Node.js website & grab the installer. Also, be sure to have 
 
 Install
 =======
-$ git clone https://github.com/ORG/PROJECT.git
+$ git clone https://github.com/vibhanshuvaibhav/youtube-radio-player.git
 $ cd PROJECT
 $ npm install
 
