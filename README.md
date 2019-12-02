@@ -1,68 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Youtube Radio Player
+====================
+A simple radio style Youtube player that allows user to add a link 
+to the playlist and play the songs first-in first-out. It also allows
+the user to increment or decrement the position of a song in the playlist as well as delete a song from the playlist. 
 
-## Available Scripts
+Requirements
+==============================================================
 
-In the project directory, you can run:
+For development, you will only need Node.js installed on your environement. 
 
-### `npm start`
+Node
+====
+Node is really easy to install & now include NPM. You should be able to run the following command after the installation procedure below.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+$ node --version
+v0.10.24
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+$ npm --version
+1.3.21
 
-### `npm test`
+Node installation on OS X
+=========================
+You will need to use a Terminal. On OS X, you can find the default terminal in /Applications/Utilities/Terminal.app.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Please install Homebrew if it's not already done with the following command.
 
-### `npm run build`
+$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If everything when fine, you should run
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+brew install node
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Node installation on Linux
+==========================
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs
 
-### `npm run eject`
+Node installation on Windows
+============================
+Just go on official Node.js website & grab the installer. Also, be sure to have git available in your PATH, npm might need it.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Install
+=======
+$ git clone https://github.com/ORG/PROJECT.git
+$ cd PROJECT
+$ npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Start & watch
+=============
+$ npm start
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

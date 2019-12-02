@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// Renders the components on to the web page.
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from "react"
+import RequestForm from "./Containers/RequestForm"
+import PlayList from "./Containers/PlayList"
+import Player from "./Containers/Player"
+import Header from "./Components/Header"
+
+function App(){
+	return(
+		<div className="app">
+			<Header />
+			<RequestForm />
+			<PlayList />
+			<Player />
+		</div>
+	)
 }
 
-export default App;
+export default App
