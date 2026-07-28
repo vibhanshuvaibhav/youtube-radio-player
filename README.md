@@ -1,61 +1,96 @@
-# Radio Room
+# ◉ Radio Room
 
-Radio Room is a free, local-first YouTube radio player. Make a station from a mood and a few filters, search YouTube in a new tab, then paste the video links you want to play.
+> Say good-bye to old-fashioned playlists and say hi! to vibe listening.
 
-There is no account, database, backend, paid API, or AI API key. Your queue, recent listening history, likes, dislikes, and selected station are stored in the browser on the device you use.
+**Radio Room** is a free, local-first YouTube radio player. Queue songs based on your vibe as they come to your mind and let them play automatically.
 
-## What it does
+No account, database, backend server, or mandatory API keys required. Your queue, listening history, likes, dislikes, and selected station vibes are stored securely in your browser's local storage.
 
-- Plays YouTube videos in a simple radio-style queue.
-- Accepts standard YouTube, `youtu.be`, Shorts, and live-video links.
-- Lets you pause, skip, remove, and reorder tracks.
-- Creates a local station guide from a description, mood, genre, and language filters.
-- Opens a YouTube search based on that guide in a new tab—no YouTube Data API key is needed.
-- Persists your local listening state between browser sessions.
+---
 
-## Run locally
+## ✨ Features
 
-You need [Node.js](https://nodejs.org/) (which includes npm) version 20.19 or newer. The current project setup also supports Node 22.12+ and your installed Node 26.
+- **♫ Smart In-App YouTube Search**: Search any song, artist, or album directly inside the application without leaving the app.
+- **⚡ 1-Click & Drag-and-Drop Queueing**: Click `+ Queue` to append a track, `▶ Play Next` to insert it after the current song, or drag & drop search result cards directly into the Queue panel.
+- **📻 Radio-Style Queue & Auto-Stop**: Plays tracks sequentially starting from the top item. Automatically moves finished tracks to history and stops smoothly when the queue exhausts.
+- **🎯 Vibe & Mood Filters**: Click station vibe chips (`Focus`, `Chill`, `Energy`, `Indie`, `Pop`, `Bollywood`, `Jazz`) for instant curated search results.
+- **📱 Fully Responsive**: Optimized for desktop monitors, laptops, tablets, and mobile smartphones with touch-friendly controls.
+- **⚙ Flexible Search Providers**: Uses free public search instances out of the box, with an optional setting to supply your own official YouTube Data API v3 key.
+- **💾 Local State Persistence**: Keeps your local queue, history, and preferences saved between browser sessions via `redux-persist`.
+
+---
+
+## 🚀 Quick Start (Run Locally)
+
+### Requirements
+- [Node.js](https://nodejs.org/) version `20.19` or newer (supports Node 20, 22, and 26).
 
 ```bash
+# Clone the repository
 git clone https://github.com/vibhanshuvaibhav/youtube-radio-player.git
 cd youtube-radio-player
+
+# Install dependencies
 npm install
+
+# Start development server
 npm start
 ```
 
-The development server opens at [http://localhost:5173](http://localhost:5173). If it does not open automatically, visit that address in your browser.
+The app will open automatically at **[http://localhost:5173](http://localhost:5173)**.
 
-To create a production build:
+---
+
+## 🛠 Build & Preview
+
+To create a production-ready build:
 
 ```bash
 npm run build
 ```
 
-The compiled static site is placed in `dist/`. It can be deployed to any static host, including GitHub Pages.
+The compiled static site will be output to the `dist/` directory.
 
-To preview that production build locally:
+To preview the production build locally:
 
 ```bash
 npm run preview
 ```
 
-## How to use it
+---
 
-1. In **Make this hour sound right**, describe the mood you want, or choose the mood, sound, and language chips.
-2. Select **Search on YouTube**. This opens a YouTube search in a new tab using your local station guide.
-3. Copy a video URL from YouTube.
-4. Return to Radio Room, paste the URL in **Add a YouTube video**, optionally give it a label, and select **Add to queue**.
-5. Use the queue controls to move a track up/down or remove it. The top item is the track currently playing.
-6. Use the heart and “less like this” controls to keep local preferences for the current browser.
+## 🌐 Deploy to GitHub Pages (2 Simple Steps)
 
-## Privacy and limitations
+This repository includes an automated GitHub Actions deployment workflow (`.github/workflows/deploy.yml`).
 
-- Radio Room does not send your queue or preferences to an app server.
-- YouTube is responsible for video playback and may show its own controls, notices, availability restrictions, or advertisements.
-- Without the YouTube Data API, the app cannot search YouTube inside the interface or automatically retrieve a video title, artist, duration, or channel. The optional label is therefore useful.
-- Browser storage is device- and browser-specific. Clearing site data clears the queue, history, and preferences.
+### Step 1: Enable GitHub Pages in your Repository
+1. Go to your repository on GitHub: `https://github.com/vibhanshuvaibhav/youtube-radio-player`
+2. Click **Settings** (top navigation tab).
+3. On the left sidebar under *Code and automation*, click **Pages**.
+4. Under **Build and deployment** -> **Source**, select **GitHub Actions**.
 
-## Future direction
+### Step 2: Push your Code to GitHub
+Whenever you push your code to `master` (or `main`), the deployment workflow will trigger automatically and build & host your app:
 
-The next optional upgrade is YouTube Data API search and metadata. It should remain behind a restricted key and preserve the current paste-a-link flow as a fallback.
+```bash
+git add .
+git commit -m "Deploy Radio Room"
+git push origin master
+```
+
+Once completed, your site will be live at:  
+**`https://vibhanshuvaibhav.github.io/youtube-radio-player/`**
+
+---
+
+## 🔒 Privacy & Local Storage
+
+- **No Remote Telemetry**: Radio Room does not upload your queue or listening history to any third-party app server.
+- **YouTube Embeds**: YouTube is responsible for video playback via iframe embeds.
+- **Device-Specific**: Data is stored locally in your browser (`localStorage`). Clearing site data resets your queue and history.
+
+---
+
+## 📄 License
+
+MIT License. Free for personal and commercial use.
