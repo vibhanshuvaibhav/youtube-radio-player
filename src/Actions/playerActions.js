@@ -1,0 +1,6 @@
+export const completeCurrent = () => ({ type: 'COMPLETE_CURRENT' })
+export const toggleLike = id => ({ type: 'TOGGLE_LIKE', payload: id })
+export const toggleDislike = id => ({ type: 'TOGGLE_DISLIKE', payload: id })
+export const setStation = station => ({ type: 'SET_STATION', payload: station })
+export const clearQueue = () => ({ type: 'CLEAR_QUEUE' })
+export const addLinkNext = link => ({ type: 'ADD_LINK_NEXT', payload: link })

@@ -1,55 +1,61 @@
-Youtube Radio Player
-====================
-A simple radio style Youtube player that allows user to add a link 
-to the playlist and play the songs first-in first-out. It also allows
-the user to increment or decrement the position of a song in the playlist as well as delete a song from the playlist. 
+# Radio Room
 
-Requirements
-==============================================================
+Radio Room is a free, local-first YouTube radio player. Make a station from a mood and a few filters, search YouTube in a new tab, then paste the video links you want to play.
 
-For development, you will only need Node.js installed on your environement. 
+There is no account, database, backend, paid API, or AI API key. Your queue, recent listening history, likes, dislikes, and selected station are stored in the browser on the device you use.
 
-Node
-====
-Node is really easy to install & now include NPM. You should be able to run the following command after the installation procedure below.
+## What it does
 
-$ node --version
-v0.10.24
+- Plays YouTube videos in a simple radio-style queue.
+- Accepts standard YouTube, `youtu.be`, Shorts, and live-video links.
+- Lets you pause, skip, remove, and reorder tracks.
+- Creates a local station guide from a description, mood, genre, and language filters.
+- Opens a YouTube search based on that guide in a new tab—no YouTube Data API key is needed.
+- Persists your local listening state between browser sessions.
 
-$ npm --version
-1.3.21
+## Run locally
 
-Node installation on OS X
-=========================
-You will need to use a Terminal. On OS X, you can find the default terminal in /Applications/Utilities/Terminal.app.
+You need [Node.js](https://nodejs.org/) (which includes npm) version 20.19 or newer. The current project setup also supports Node 22.12+ and your installed Node 26.
 
-Please install Homebrew if it's not already done with the following command.
+```bash
+git clone https://github.com/vibhanshuvaibhav/youtube-radio-player.git
+cd youtube-radio-player
+npm install
+npm start
+```
 
-$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+The development server opens at [http://localhost:5173](http://localhost:5173). If it does not open automatically, visit that address in your browser.
 
-If everything when fine, you should run
+To create a production build:
 
-brew install node
+```bash
+npm run build
+```
 
-Node installation on Linux
-==========================
-sudo apt-get install python-software-properties
-sudo add-apt-repository ppa:chris-lea/node.js
-sudo apt-get update
-sudo apt-get install nodejs
+The compiled static site is placed in `dist/`. It can be deployed to any static host, including GitHub Pages.
 
-Node installation on Windows
-============================
-Just go on official Node.js website & grab the installer. Also, be sure to have git available in your PATH, npm might need it.
+To preview that production build locally:
 
+```bash
+npm run preview
+```
 
-Install
-=======
-$ git clone https://github.com/vibhanshuvaibhav/youtube-radio-player.git
-$ cd PROJECT
-$ npm install
+## How to use it
 
-Start & watch
-=============
-$ npm start
+1. In **Make this hour sound right**, describe the mood you want, or choose the mood, sound, and language chips.
+2. Select **Search on YouTube**. This opens a YouTube search in a new tab using your local station guide.
+3. Copy a video URL from YouTube.
+4. Return to Radio Room, paste the URL in **Add a YouTube video**, optionally give it a label, and select **Add to queue**.
+5. Use the queue controls to move a track up/down or remove it. The top item is the track currently playing.
+6. Use the heart and “less like this” controls to keep local preferences for the current browser.
 
+## Privacy and limitations
+
+- Radio Room does not send your queue or preferences to an app server.
+- YouTube is responsible for video playback and may show its own controls, notices, availability restrictions, or advertisements.
+- Without the YouTube Data API, the app cannot search YouTube inside the interface or automatically retrieve a video title, artist, duration, or channel. The optional label is therefore useful.
+- Browser storage is device- and browser-specific. Clearing site data clears the queue, history, and preferences.
+
+## Future direction
+
+The next optional upgrade is YouTube Data API search and metadata. It should remain behind a restricted key and preserve the current paste-a-link flow as a fallback.
